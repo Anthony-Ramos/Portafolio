@@ -1,6 +1,7 @@
 /*Importaciones de las tipografias*/
-@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 /*Espacio para modoficar el espacio del Html*/
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -16,63 +17,122 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/*Modificacion de HTML para agregar el scroll*/
+html{
+  scroll-behavior: smooth;
+}
+/*Modificacion del header*/
+header {
+  position: sticky;
+  top: 0;
+  height: 7vh;
+  z-index: 100;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
 
 /*Modificaciones del Body*/
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+  background-color: #242424;
 }
+
 /*Configurciones o estilos para el h1 mayormente aplicados al encabezado*/
 /*Ubicar los dos divs uno al lado del otro*/
-.encabezado
-{
+.encabezado {
   display: flex;
   gap: 0.2em;
 }
+
 /*Modificaciones para el apartado del nombre y el perfil*/
-.primero
-{
-  margin-top: 12.0em;
-  margin-left: 2.0em;
+.primero {
+  margin-top: 8vh;
+  margin-left: 1.0em;
 }
-.nombre 
-{
-  font-size: 2.0em;
-  line-height: 0.5;
-  font-family: "Parisienne", "cursive"; 
+
+.nombre {
+  font-size: 2.35em;
+  line-height: 1.5;
+  font-family: "Roboto Mono", monospace;
 }
-.perfil
-{
-  font-size: 1.0em;
+
+.perfil {
+  font-size: 1.2em;
   font-family: "Raleway", sans-serif;
   font-optical-sizing: auto;
   font-weight: weight;
   font-style: normal;
 }
+
 /*Modificaciones para el apartado de las fotos*/
-.segundo
-{
+.segundo {
   display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
 }
-#1 { flex: 1; padding: 20px; background-color: #f87171; }
-#2 { flex: 2; padding: 20px; background-color: #34d399; }
-#3 { flex: 4; padding: 20px; background-color: #60a5fa; }
+.carrusel {
+  width: 45vw;
+  height: 30vw;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  background-color: #fff;
+}
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
 /*Modificaiones para el menu*/
-.menu
-{
+.menu {
   margin-left: 2.0em;
   display: flex;
   gap: 2.0em;
+  
 }
+.menu > a {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  padding-bottom: 5px;
+  font-weight: 500;
+}
+
+.menu > a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: #b853f9;
+  transition: width 0.3s ease-in-out;
+}
+
+.menu > a:hover::after {
+  width: 100%;
+}
+.menu > a:hover{
+  transform: scale(1.2);
+}
+
+
 /*Configuracion del apartado del boton*/
-.portafolio
-{
+.botonp {
   width: 10.0em;
   height: 2.5em;
   background: #b853f9;
@@ -83,28 +143,50 @@ body {
   cursor: pointer;
   font-weight: 600;
   font-size: 15px;
+  margin-left: 1.0em;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
-.portafolio:hover
-{
+
+.botonp:hover {
   color: #fff;
   background-color: #8f20d0;
   border-color: #8f20d0;
+  transform: scale(1.1);
 }
-.portafolio:active
-{
-  background-color: #440665;
-  border-color: #440665;
-}
+
 /*Modificacion de los estilos para los iconos de las redes sociales*/
-.redes
-{
+.redes {
   display: flex;
   gap: 1.0em;
 }
-.icono
-{
+
+.icono {
   margin-top: 0.5em;
   font-size: 2.0em;
   text-decoration: none;
   color: #fff;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.icono:hover{
+  color: var(--hover-color);
+  transform: scale(1.3);
+}
+/*Modificacion de los seccion*/
+.section {
+  min-height: 100vh;
+  padding: 9vh 2em;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/*Modificacion de seccion inicio*/
+.inicio{
+  min-width: 100vh;
+  display: flex;
+  align-items: center;
 }
