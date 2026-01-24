@@ -71,33 +71,7 @@ body {
   text-align: justify;
 }
 
-/*Modificaciones para el apartado de las fotos*/
-.segundo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1em;
-}
-.carrusel {
-  width: 45vw;
-  height: 30vw;
-  position: relative;
-  overflow: hidden;
-  border-radius: 15px;
-  background-color: #fff;
-}
-.slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
+/*Modificaciones para el apartado de las tecnologias*/
 
 
 /*Modificaiones para el menu*/

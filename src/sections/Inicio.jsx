@@ -15,6 +15,7 @@ const tecnologias = [
   { name: "SQL", icon: <SiMysql /> },
   { name: "Git", icon: <FaGitAlt /> },
   { name: "Docker", icon: <SiDocker /> },
+  { name: "Python", icon: <FaPython /> },
 ];
 
 function Inicio() {
@@ -38,48 +39,25 @@ function Inicio() {
       <div className="encabezado">
         <div className="primero">
           <h1 className="nombre">Pablo Anthony Ramos Zepeda</h1>
-          <h2 className="perfil">Full-Stack junior  <span> enfocado en Backend</span>
+          <h2 className="perfil">Backend Developer Jr | APIs REST · SQL · Docker
           </h2>
           <p className="descripcion">
-            Desarrollo sistemas backend robustos, APIs y arquitecturas escalables.
-            Especializado en lógica de negocio, bases de datos e integración full-stack.
+            Backend Developer Jr enfocado en el desarrollo de APIs REST,
+            modelado de bases de datos SQL y contenedores Docker.
+            Experiencia integrando backend con frontend y servicios externos.
+
           </p>
-          <Technologies techs={tecnologias} />
-          
-          <p>React · Java · Python · Php· MongoDB</p>
+
+
 
           <button className="botonp">Descargar CV</button>
           <button className="botonp">Solicitar Servicio</button>
 
           <SocialLinks links={redesIconos} />
         </div>
-
-        <div className="segundo">
-          <div className="carrusel">
-            {imagenes.map((img, index) => (
-              <div
-                key={img.id}
-                className="slide"
-                style={{
-                  opacity: index === current ? 1 : 0,
-                  backgroundColor: img.color,
-                }}
-              />
-            ))}
-          </div>
-
-          <div className="botones">
-            <button
-              className="botonp"
-              onClick={() => setCurrent((current - 1 + imagenes.length) % imagenes.length)}>
-              Anterior
-            </button>
-            <button
-              className="botonp"
-              onClick={() => setCurrent((current + 1) % imagenes.length)}>
-              Siguiente
-            </button>
-          </div>
+        <div className="tecnologias">
+          <Technologies techs={tecnologias} />
+          <p>React · Java · Python · Php· MongoDB</p>
         </div>
       </div>
     </AnimatedSection>
